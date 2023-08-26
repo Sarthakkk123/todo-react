@@ -47,18 +47,11 @@ function TodoList() {
     <div className="container">
       <div className="header">TODO LIST</div>
       <div className="input-container">
-        <input
-          type="text"
-          className="add-input"
-          placeholder="Add Activity"
-          value={activity}
-          onChange={(e) => setActivity(e.target.value)}
-        />
-        <button
-          type="button"
-          className="add-button"
-          onClick={addActivity}
-          disabled={activity.trim() === ""} >
+        <input type="text" className="add-input"
+          placeholder="Add Activity" value={activity}
+          onChange={(e) => setActivity(e.target.value)} />
+        <button type="button" className="add-button"
+          onClick={addActivity} disabled={activity.trim() === ""} >
           Add
         </button>
       </div>
@@ -71,11 +64,8 @@ function TodoList() {
             <div className="activity">
               {editingIndex === index ? (
                 <div>
-                  <input
-                    type="text"
-                    value={editedText}
-                    onChange={(e) => setEditedText(e.target.value)}
-                  />
+                  <input className="user-input" type="text" value={editedText}
+                    onChange={(e) => setEditedText(e.target.value)} />
                 </div>
               ) : (
                 <div>{data}</div>
@@ -84,35 +74,23 @@ function TodoList() {
             <div className="buttons">
               {editingIndex === index ? (
                 <React.Fragment>
-                  <button
-                    type="button"
-                    className="update-button"
-                    onClick={() => saveEdit(index)}
-                  >
+                  <button type="button" className="update-button"
+                    onClick={() => saveEdit(index)} >
                     Update
                   </button>
-                  <button
-                    type="button"
-                    className="cancel-button"
-                    onClick={cancelEdit}
+                  <button type="button" className="cancel-button" onClick={cancelEdit}
                   >
                     Cancel
                   </button>
                 </React.Fragment>
               ) : (
                 <React.Fragment>
-                  <button
-                    type="button"
-                    className="edit-button"
-                    onClick={() => startEditing(index, data)}
-                  >
+                  <button type="button" className="edit-button"
+                    onClick={() => startEditing(index, data)} >
                     Edit
                   </button>
-                  <button
-                    type="button"
-                    className="remove-button"
-                    onClick={() => removeActivity(data)}
-                  >
+                  <button type="button" className="remove-button"
+                    onClick={() => removeActivity(data)} >
                     Remove
                   </button>
                 </React.Fragment>
